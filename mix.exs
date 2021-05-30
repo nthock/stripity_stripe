@@ -20,7 +20,7 @@ defmodule Stripe.Mixfile do
         "coveralls.html": :test
       ],
       test_coverage: [tool: ExCoveralls],
-      version: "2.9.0",
+      version: "2.10.0",
       source_url: "https://github.com/code-corps/stripity_stripe/",
       docs: [
         main: "readme",
@@ -63,7 +63,7 @@ defmodule Stripe.Mixfile do
   defp deps do
     [
       {:dialyxir, "1.0.0-rc.4", only: [:dev, :test], runtime: false},
-      {:ex_doc, "~> 0.20.2", only: :dev},
+      {:ex_doc, "~> 0.23.0", only: :dev},
       {:excoveralls, "~> 0.11.1", only: :test},
       {:hackney, "~> 1.15"},
       {:inch_ex, "~> 2.0", only: [:dev, :test]},
@@ -144,14 +144,15 @@ defmodule Stripe.Mixfile do
       Connect: [
         Stripe.Account,
         Stripe.ApplicationFee,
+        Stripe.Capability,
+        Stripe.Connect.OAuth,
+        Stripe.Connect.OAuth.AuthorizeResponse,
+        Stripe.Connect.OAuth.DeauthorizeResponse,
+        Stripe.Connect.OAuth.TokenResponse,
         Stripe.CountrySpec,
         Stripe.ExternalAccount,
         Stripe.FeeRefund,
         Stripe.LoginLink,
-        Stripe.Connect.OAuth,
-        Stripe.Connect.OAuth.AuthorizeResponse,
-        Stripe.Connect.OAuth.TokenResponse,
-        Stripe.Connect.OAuth.DeauthorizeResponse,
         Stripe.Recipient,
         Stripe.Topup,
         Stripe.Transfer,
